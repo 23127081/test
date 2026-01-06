@@ -8,7 +8,10 @@ WORKDIR /app
 COPY server/package*.json ./
 
 # Install dependencies
-RUN npm install --production
+# RUN npm install --production
+
+RUN npm ci --omit=dev
+
 
 # Copy server files
 COPY server/ ./
